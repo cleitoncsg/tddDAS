@@ -1,0 +1,38 @@
+package primeirosPassos;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class AlunoTest {
+	
+	private Aluno a;
+	int contador = 0;
+
+	@Before
+	public void setUp() throws Exception {
+		a = new Aluno();
+	}
+
+	@Test
+	public void VerificaMatriculatest() throws Exception {
+		a.setMatricula(123);
+		assertEquals(123, a.getMatricula());
+		tearDown();
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void verificaMatriculaNegativaTest(){
+		a.setMatricula(-123);
+		a.getMatricula();
+	}
+	
+	@After
+	public void tearDown() throws Exception {
+		System.out.printf("Teste %d \n",contador);
+		contador++;
+	}
+
+}

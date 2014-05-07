@@ -1,0 +1,30 @@
+package primeirosPassos;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class AlunoTest {
+	
+	private Aluno a;
+
+	@Before
+	public void setUp() throws Exception {
+		a = new Aluno();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.out.println("Testando...");
+	}
+	
+
+	@Test
+	public void VerificaMatriculatest() {
+		a.setMatricula(123);
+		assertEquals(123, a.getMatricula());
+	}
+
+}
