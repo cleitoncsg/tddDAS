@@ -1,0 +1,20 @@
+%Lógica para fatos e regras para fator K
+
+fatorK(0.9, mercadoVaiCair).
+fatorK(-0.9,mercadoVaiSubir).
+
+executaFatorK :- 
+		(fatorK > 0.9 , fatorK < -0.9).
+		%compra ou vende
+		
+%_________________________________________________________
+
+%Lógica para fatos e regras para Fibonacci
+
+executaFibonacci:- 
+		read (numero), verificaNumeroFibonacci(numero).
+		
+%_________________________________________________________
+
+%PROXIMO PASSO: LER OS DADOS NO MERCADO NUM ARQUIVO E VERIFICAR 
+%A RESPOSTA NO PARADIGMA LÓGICO

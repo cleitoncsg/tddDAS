@@ -1,0 +1,27 @@
+%Lógica para fatos e regras para fator K
+
+fatorK(0.9, mercadoVaiCair).
+fatorK(-0.9,mercadoVaiSubir).
+
+executaFatorK :- 
+		(fatorK > 0.9 ; fatorK < -0.9).
+		%compra ou vende
+		
+%_________________________________________________________
+
+%Lógica para fatos e regras para Fibonacci
+
+executaFibonacci:- 
+		read (numero), verificaNumeroFibonacci(numero).
+		
+%_________________________________________________________
+
+%PROXIMO PASSO: LER OS DADOS NO MERCADO NUM ARQUIVO E VERIFICAR 
+%A RESPOSTA NO PARADIGMA LÓGICO SE DEVE COMPRAR, VENDER OU FAZER NADA.
+
+%Orquestrar serviços em SOA
+%Processo de combinar, ordenar e alinhar os serviços para que os mesmos
+%trabalhem de forma conjunta e harmônica.
+
+bbse3 // bmfbovespa.com.br
+

@@ -1,0 +1,15 @@
+package jamesshore.com;
+
+public class QueryString {
+
+	private String name;
+	
+	public QueryString(String name) {
+		this.name = name;
+	}
+
+	public int count() {
+		return 1;
+	}
+
+}
