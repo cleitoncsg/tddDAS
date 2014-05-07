@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 DESENVOLVIMENTO AVANÇADO DE SOFTWARE
 ============================================================================
@@ -6,3 +7,8 @@ Cada colaborador(a) possui uma pasta específica em que se recomenda subir
 os exercicios feitos na disciplina. Além disso, cada colaborador também
 pode subir materiais extras de estudo e/ou resoluções de outros exercicios.
 ============================================================================
+=======
+Conteúdo de TDD da disciplina de Desenvolvimento Avançado de Software.
+
+======
+>>>>>>> d3213061b5e884fc098376df46802f3ac6e9f953
