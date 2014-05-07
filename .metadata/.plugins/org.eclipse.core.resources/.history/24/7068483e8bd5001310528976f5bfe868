@@ -1,0 +1,29 @@
+package primeirosPassos;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class testFuncionario {
+	
+	private Imposto p;
+
+	@Before
+	public void setUp() throws Exception {
+		p = new Imposto();
+	}
+
+	@Test
+	public void calculaImpostoDeRendaTest() {
+		assertEquals(50, p.calculoImpostoRenda(5), 0.1);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void verificaCalculoImpostoDeRendaNegativoTest() {
+		assertEquals(10, p.calculoImpostoRenda(40), 0.1);
+	}
+
+
+}

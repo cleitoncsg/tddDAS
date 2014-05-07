@@ -1,0 +1,9 @@
+package primeirosPassos;
+
+public class Funcionario {
+
+	public double calculoSalario() {
+		return 10;
+	}
+
+}

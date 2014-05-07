@@ -1,0 +1,23 @@
+package primeirosPassos;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class testFuncionario {
+	
+	private Funcionario f;
+
+	@Before
+	public void setUp() throws Exception {
+		f = new Funcionario();
+	}
+
+	@Test
+	public void calculaSalarioFuncionarioTest() {
+		assertEquals(10, f.calculoSalario(), 0.1);
+	}
+
+}

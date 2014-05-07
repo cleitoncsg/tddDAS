@@ -1,0 +1,14 @@
+package primeirosPassos;
+
+public class Imposto {
+
+	public double calculoImpostoRenda(double fator) {
+		double valorImpostoRenda = 10*fator;
+		
+		if(fator < 0)
+			throw new IllegalArgumentException("O fator é ilegal");
+		
+		return valorImpostoRenda;
+	}
+
+}
