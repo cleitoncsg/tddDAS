@@ -12,6 +12,8 @@ public class CalculadoraCorda {
 		
 		if(Integer.parseInt(string1) < 0)
 			throw new IllegalArgumentException();
+		else if(Integer.parseInt(string1) > 1000)
+			throw new IllegalArgumentException();
 		
 		else{
 			calcCorda.add(string1);
