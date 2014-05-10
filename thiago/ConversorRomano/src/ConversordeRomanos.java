@@ -16,10 +16,23 @@ public class ConversordeRomanos {
 	public int converte(String algarismo) {
 		
 		int acumulador = 0;
+		int ultimoVizinhoDaDireita = 0;
 		
-		for (int i =0; i < algarismo.length(); i++){
-					
-		acumulador = acumulador + tabela.get(algarismo.charAt(i));
+		for (int i = algarismo.length()-1; i >= 0; i--){
+			//pega o inteiro referente ao símbolo atual
+			
+			int atual = tabela.get(algarismo.charAt(i));
+			
+			// se o da direita for menor multiplicaremos por menos 1
+			
+			int multiplicador = 1;
+			
+			if (atual < ultimoVizinhoDaDireita)
+				multiplicador = -1;
+			
+				acumulador = acumulador + tabela.get(algarismo.charAt(i))*multiplicador;
+				
+				ultimoVizinhoDaDireita = atual;
 					
 		}
 
