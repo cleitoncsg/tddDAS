@@ -40,5 +40,14 @@ public class CalculadoraCordaTest {
 		
 		System.out.println(calculadoraCorda.produto());
 	}
+	
+	@Test
+	public void verificaNumeroNegativoTest() {
+		calculadoraCorda.Add("-2");
+		
+		assertEquals(2, calculadoraCorda.produto());
+		
+		System.out.println(calculadoraCorda.produto());
+	}
 
 }
