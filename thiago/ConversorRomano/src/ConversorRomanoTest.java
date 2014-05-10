@@ -41,5 +41,23 @@ public class ConversorRomanoTest {
 		
 		assertEquals(2, retorno);
 	}
+	
+	@Test
+	public void converteOSimboloXXII() {
+		ConversordeRomanos conversor = new ConversordeRomanos();
+		
+		int retorno = conversor.converte("XXII");
+		
+		assertEquals(22, retorno);
+	}
+	
+	@Test
+	public void converteOSimboloIV() {
+		ConversordeRomanos conversor = new ConversordeRomanos();
+		
+		int retorno = conversor.converte("IV");
+		
+		assertEquals(4, retorno);
+	}
 
 }
