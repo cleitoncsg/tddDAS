@@ -1,0 +1,36 @@
+package exercicio_kata;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class CalculadoraCorda {
+	
+	ArrayList<String> calcCorda = new ArrayList<String>();
+
+	public int Add(String string1) {
+		calcCorda.add(string1);
+		
+		System.out.println(calcCorda);
+		if(string1 == "")
+			return 0;
+		
+		return Integer.parseInt(string1);		
+	}
+
+	public int produto() {
+		int produto = 1;
+		System.out.printf("Primeiro termo %d\n",produto);
+		Iterator<String> i = calcCorda.iterator();
+		int j = 0;
+		
+	    while(i.hasNext()) {  // Se tiver próximo
+	      System.out.println(Integer.parseInt (i.next()));  // Imprime o próximo
+	      produto = produto*Integer.parseInt(calcCorda.get(j));
+	      j++;
+	    }
+			
+		return produto;
+	}
+
+}
