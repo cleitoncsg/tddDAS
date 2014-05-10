@@ -13,5 +13,14 @@ public class ConversorRomanoTest {
 		
 		assertEquals(1, retorno);
 	}
+	
+	@Test
+	public void converteOSimboloV() {
+		ConversordeRomanos conversor = new ConversordeRomanos();
+		
+		int retorno = conversor.converte("V");
+		
+		assertEquals(5, retorno);
+	}
 
 }
