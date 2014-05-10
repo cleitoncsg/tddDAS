@@ -1,0 +1,12 @@
+package exercicio_kata;
+
+import java.util.ArrayList;
+
+public class CalculadoraCorda {
+
+	public int Add(String string1) {
+		
+		List <CalculadoraCorda> calcCorda = new ArrayList<CalculadoraCorda>();
+		
+	}
+}
