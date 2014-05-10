@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testrun name="CalculadoraCordaTest" project="treino1CleitonThiago" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="exercicio_kata.CalculadoraCordaTest" time="0.0">
-    <testcase name="verificaStringNulaTest" classname="exercicio_kata.CalculadoraCordaTest" time="0.0"/>
-    <testcase name="verificaUmParametroTest" classname="exercicio_kata.CalculadoraCordaTest" time="0.0"/>
-  </testsuite>
-</testrun>

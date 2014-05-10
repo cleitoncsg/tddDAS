@@ -31,7 +31,14 @@ public class CalculadoraCordaTest {
 	
 	@Test
 	public void verificaProdutoTest() {
-		assertEquals(6, calculadoraCorda.produto());
+		calculadoraCorda.Add("2");
+		calculadoraCorda.Add("3");
+		calculadoraCorda.Add("4");
+		calculadoraCorda.Add("5");
+		
+		assertEquals(120, calculadoraCorda.produto());
+		
+		System.out.println(calculadoraCorda.produto());
 	}
 
 }
