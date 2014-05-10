@@ -3,6 +3,7 @@ package Passo1;
 import static org.junit.Assert.*;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,13 +13,12 @@ public class PessoaTest {
 
 	
 
-	@After
-	public void tearDown() throws Exception {
-	}
+	
 
 	@Test
 	public void test() {
-		assertEquals(pessoa.setNome("thiago"), pessoa.getNome());
+		pessoa.setNome("thiago");
+		assertEquals("thiago", pessoa.getNome());
 		
 	}
 
