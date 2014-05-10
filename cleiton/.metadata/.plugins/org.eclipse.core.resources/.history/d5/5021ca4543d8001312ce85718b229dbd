@@ -23,8 +23,7 @@ public class CalculadoraCordaTest {
 	
 	@Test
 	public void verificaDoisParametroTest() {
-		calculadoraCorda.Add("1");
-		calculadoraCorda.Add("2");
+		calculadoraCorda.Add("1,2");
 		assertEquals(1, calculadoraCorda.Add("1"));
 		assertEquals(2, calculadoraCorda.Add("2"));
 	}
