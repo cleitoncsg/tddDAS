@@ -23,15 +23,10 @@ public class CalculadoraCordaTest {
 	
 	@Test
 	public void verificaDoisParametroTest() {
+		calculadoraCorda.Add("1");
 		calculadoraCorda.Add("2");
-		calculadoraCorda.Add("3");
 		assertEquals(1, calculadoraCorda.Add("1"));
 		assertEquals(2, calculadoraCorda.Add("2"));
-	}
-	
-	@Test
-	public void verificaProdutoTest() {
-		assertEquals(6, calculadoraCorda.produto());
 	}
 
 }
