@@ -22,5 +22,14 @@ public class ConversorRomanoTest {
 		
 		assertEquals(5, retorno);
 	}
+	
+	@Test
+	public void converteOSimboloX() {
+		ConversordeRomanos conversor = new ConversordeRomanos();
+		
+		int retorno = conversor.converte("X");
+		
+		assertEquals(10, retorno);
+	}
 
 }
