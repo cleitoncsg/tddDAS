@@ -1,0 +1,14 @@
+package exercicio_kata;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CalculadoraCordaTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
