@@ -8,17 +8,24 @@ import org.junit.Test;
 
 public class PessoaTest {
 
+	private Pessoa p;
+	
 	@Before
 	public void setUp() throws Exception {
+		p = new Pessoa();
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		System.out.println("Testando...");
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void cadastraNomeTest() {
+		p.setNome("Thiago");
+		assertEquals("Thiago", p.getNome());
+		
 	}
+	
 
 }
