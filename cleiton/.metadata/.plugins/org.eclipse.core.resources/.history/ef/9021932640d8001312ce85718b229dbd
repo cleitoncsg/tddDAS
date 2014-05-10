@@ -10,15 +10,10 @@ public class CalculadoraCordaTest {
 	private CalculadoraCorda calculadoraCorda = new CalculadoraCorda();
 	
 	@Test
-	public void verificaStringNulaTest() {
+	public void test() {
 		calculadoraCorda.Add("");
+		
 		assertEquals(0, calculadoraCorda.Add(""));
-	}
-	
-	@Test
-	public void verificaUmParametroTest() {
-		calculadoraCorda.Add("1");
-		assertEquals(1, calculadoraCorda.Add("1"));
 	}
 
 }

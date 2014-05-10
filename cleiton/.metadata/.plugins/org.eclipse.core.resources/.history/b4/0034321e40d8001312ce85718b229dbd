@@ -4,11 +4,6 @@ public class CalculadoraCorda {
 
 	public int Add(String string1) {
 		
-		if(string1 == "")
-			return 0;
-		else if(string1 == "1")
-			return 1;
-		else
-			return 1000;
+		return 0;
 	}
 }
