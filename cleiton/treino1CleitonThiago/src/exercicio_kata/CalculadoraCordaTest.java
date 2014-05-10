@@ -1,8 +1,10 @@
 package exercicio_kata;
 
 import static org.junit.Assert.*;
+import junit.framework.Assert;
 
 import org.junit.Test;
+import org.junit.internal.runners.statements.Fail;
 
 public class CalculadoraCordaTest {
 
@@ -41,13 +43,11 @@ public class CalculadoraCordaTest {
 		System.out.println(calculadoraCorda.produto());
 	}
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void verificaNumeroNegativoTest() {
 		calculadoraCorda.Add("-2");
 		
-		assertEquals(2, calculadoraCorda.produto());
-		
-		System.out.println(calculadoraCorda.produto());
+		Assert.fail("Numero negativo foi enviado");
 	}
 
 }

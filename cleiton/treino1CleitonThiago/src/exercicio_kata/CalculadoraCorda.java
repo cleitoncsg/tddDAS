@@ -9,13 +9,19 @@ public class CalculadoraCorda {
 	ArrayList<String> calcCorda = new ArrayList<String>();
 
 	public int Add(String string1) {
-		calcCorda.add(string1);
 		
-		System.out.println(calcCorda);
-		if(string1 == "")
-			return 0;
+		if(Integer.parseInt(string1) < 0)
+			throw new IllegalArgumentException();
 		
-		return Integer.parseInt(string1);		
+		else{
+			calcCorda.add(string1);
+			
+			System.out.println(calcCorda);
+			if(string1 == "")
+				return 0;
+			
+			return Integer.parseInt(string1);
+		}
 	}
 
 	public int produto() {
