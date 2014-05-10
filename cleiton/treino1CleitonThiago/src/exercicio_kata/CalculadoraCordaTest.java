@@ -56,5 +56,15 @@ public class CalculadoraCordaTest {
 		
 		Assert.fail("Numero maior que mil foi enviado");
 	}
+	
+	@Test
+	public void verificaCaracterInvalidoTest() {
+		calculadoraCorda.Add("*");
+		calculadoraCorda.Add("2");
+		calculadoraCorda.Add("*");
+		calculadoraCorda.Add("3");
+		
+		assertEquals(6, calculadoraCorda.produto());
+	}
 
 }
