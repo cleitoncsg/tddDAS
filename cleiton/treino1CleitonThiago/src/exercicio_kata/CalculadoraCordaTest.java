@@ -57,14 +57,25 @@ public class CalculadoraCordaTest {
 		Assert.fail("Numero maior que mil foi enviado");
 	}
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void verificaCaracterInvalidoTest() {
 		calculadoraCorda.Add("*");
-		calculadoraCorda.Add("2");
+		calculadoraCorda.Add("12");
 		calculadoraCorda.Add("*");
-		calculadoraCorda.Add("3");
+		calculadoraCorda.Add("2");
 		
-		assertEquals(6, calculadoraCorda.produto());
+		assertEquals(24, calculadoraCorda.produto());
+	}
+	
+	@Test
+	public void verificaContaComOperadorTest() {
+		calculadoraCorda.AddComOperador("2");
+		calculadoraCorda.AddComOperador("*");
+		calculadoraCorda.AddComOperador("4");
+		
+		assertEquals(8, calculadoraCorda.produto());
+		
+		System.out.println(calculadoraCorda.produto());
 	}
 
 }
