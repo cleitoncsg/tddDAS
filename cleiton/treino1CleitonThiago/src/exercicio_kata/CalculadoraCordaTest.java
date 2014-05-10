@@ -49,5 +49,12 @@ public class CalculadoraCordaTest {
 		
 		Assert.fail("Numero negativo foi enviado");
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void verificaMaiorQueMilTest() {
+		calculadoraCorda.Add("1001");
+		
+		Assert.fail("Numero maior que mil foi enviado");
+	}
 
 }
