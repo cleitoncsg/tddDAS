@@ -11,10 +11,6 @@ public class PessoaTest {
 	
 	Pessoa pessoa = new Pessoa(); 
 
-	
-
-	
-
 	@Test
 	public void test() {
 		pessoa.setNome("thiago");
