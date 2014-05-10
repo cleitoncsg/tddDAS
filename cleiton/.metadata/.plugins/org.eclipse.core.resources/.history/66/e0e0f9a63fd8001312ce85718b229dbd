@@ -13,7 +13,7 @@ public class CalculadoraCordaTest {
 	public void test() {
 		calculadoraCorda.Add("");
 		
-		assertEquals(0, calculadoraCorda.Add(""));
+		assertEquals("", calculadoraCorda.calculoCorda(string1,string2,string3));
 	}
 
 }
