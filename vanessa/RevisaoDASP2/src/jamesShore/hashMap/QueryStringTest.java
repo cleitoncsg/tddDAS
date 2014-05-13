@@ -57,5 +57,4 @@ public class QueryStringTest {
 		qs = new QueryString("name1=value1&name2=value2&name3=value3");
 		assertEquals(3, qs.count());
 	}
-	
 }
