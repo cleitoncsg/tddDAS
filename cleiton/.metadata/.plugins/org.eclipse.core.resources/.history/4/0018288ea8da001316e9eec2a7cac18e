@@ -28,10 +28,5 @@ public class CalculadoraTest {
 	public void produtoTest() {
 		assertEquals(25, calculadora.produto(5,5),0.01);
 	}
-	
-	@Test
-	public void divisaoTest() {
-		assertEquals(1, calculadora.produto(5,5),0.01);
-	}
 
 }
