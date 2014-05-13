@@ -44,6 +44,11 @@ public class QueryStringTest {
 		assertEquals("value1", qs.valueFor("name1"));
 		assertEquals("value2", qs.valueFor("name2"));
 		assertEquals("value3", qs.valueFor("name3"));
-		
+	}
+	
+	@Test (expected = RuntimeException.class)
+	public void testNameNotFound(){
+		qs = new QueryString("name=value");
+		qs.valueFor("name1");
 	}
 }
