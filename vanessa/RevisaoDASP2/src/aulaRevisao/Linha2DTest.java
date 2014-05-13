@@ -8,21 +8,14 @@ import org.junit.Test;
 
 public class Linha2DTest {
 	
-	Linha2D linhaA;
-	Linha2D linhaB;
+	Linha2D linha2D = new Linha2D();
 	
 	@Test
 	public void testInterseccao() {
-		Ponto a = new Ponto(0,2);
-		Ponto b = new Ponto(0,4);
-		
-		Ponto c = new Ponto(0,2);
-		Ponto d = new Ponto(0,6);
-		
-		linhaA = new Linha2D(a,b);
-		linhaB = new Linha2D(c,d);
-		
-		assertEquals("encontrado", linhaA.interseccao(linhaB));
+		linha2D.pontoA(0, 2);
+		linha2D.pontoB(2, 2);
+	
+		assertEquals("encontrado",linha2D.interseccao() );
 	}
 
 }

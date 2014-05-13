@@ -5,9 +5,9 @@ public class Ponto {
 	private int x;
 	private int y;
 
-	public Ponto(int pontoX, int pontoY) {
-		this.x=pontoX;
-		this.y =pontoY;
+	public Ponto(int coordenadaX, int coordenadaY) {
+		this.x=coordenadaX;
+		this.y =coordenadaY;
 	}
 
 }

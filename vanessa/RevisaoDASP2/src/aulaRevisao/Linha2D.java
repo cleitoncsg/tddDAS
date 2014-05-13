@@ -1,17 +1,30 @@
 package aulaRevisao;
 
+import java.util.ArrayList;
+
 public class Linha2D {
+
+	ArrayList<Integer> cadastroPontoA = new ArrayList<Integer>();
+	ArrayList<Integer> cadastroPontoB = new ArrayList<Integer>();
 	
-	private Ponto pontoA, pontoB;
+	public String interseccao() {
+		String resposta = "nada";
 
-	public Linha2D(Ponto pontoA, Ponto pontoB) {
-		this.pontoA=pontoA;
-		this.pontoB=pontoB;
+		if ( (cadastroPontoA.get(0) == cadastroPontoB.get(0) || cadastroPontoA.get(1) == cadastroPontoB.get(1)) ){
+		    resposta = "encontrado";	  
+		}
+		
+		return resposta;
 	}
-
-	public String interseccao(Linha2D linhaB) {
-		// TODO Auto-generated method stub
-		return "encontrado";
+	
+	public void pontoA(int x, int y){
+		cadastroPontoA.add(x);
+		cadastroPontoA.add(y);
 	}
-
+	
+	public void pontoB(int x, int y){
+		cadastroPontoB.add(x);
+		cadastroPontoB.add(y);
+	}
 }
+	
