@@ -15,8 +15,8 @@ public class CalculadoraTest {
 	}
 
 	@Test
-	public void somaTest() {
-		assertEquals(10, calculadora.soma(a,b));
+	public void test() {
+		
 	}
 
 }
