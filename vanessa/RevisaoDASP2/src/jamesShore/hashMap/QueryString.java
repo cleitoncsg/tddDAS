@@ -25,7 +25,13 @@ public class QueryString {
 	}
 
 	public String valueFor(String name) {
-		String[] nameAndValue = getQuery().split("=");
-		return nameAndValue[1];
+		String[] pairs = getQuery().split("&");
+		
+		for (String pair : pairs){
+			String[] nameAndValue = pair.split("=");
+			if(nameAndValue[0].equals(name))
+				return nameAndValue[1];
+		}
+		throw new RuntimeException(name+"não foi encontrado");
 	}
 }
