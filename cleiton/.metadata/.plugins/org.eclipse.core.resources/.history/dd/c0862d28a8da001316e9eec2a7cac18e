@@ -9,8 +9,4 @@ public class Calculadora {
 	public double subtracao(double a, double b){
 		return a - b;
 	}
-	
-	public double produto(double a, double b){
-		return 25;
-	}
 }
