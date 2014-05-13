@@ -1,9 +1,5 @@
 package exercicioCalculadora;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-
 public class Calculadora {
 
 	public double soma(double a, double b){
@@ -17,10 +13,5 @@ public class Calculadora {
 	public double produto(double a, double b){
 		return a*b;
 	}
-	
-	public double divisao(double a, double b){
-		return 1;
-	}
-	
 	
 }
