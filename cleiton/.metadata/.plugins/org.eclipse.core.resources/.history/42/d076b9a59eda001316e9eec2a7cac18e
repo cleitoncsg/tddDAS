@@ -22,20 +22,10 @@ public class QueryStringTest {
 
 	@Test
 	public void testOneNameValuePair() {
-		qs= new QueryString("name=value");
-        assertEquals(1, qs.count());
-        assertEquals("value", qs.valueFor("name"));
+		
+       assertEquals(1, qs.count());
+       assertEquals ("value", qs.valueFor ("bosta"));
 	}
-	
-	@Test
-	public void testMultipleNameValuePairs() {
-         qs = new QueryString("name1=value1&name2=value2&name3=value3");
-         assertEquals(3, qs.count());
-         assertEquals("value1", qs.valueFor("name1"));
-         assertEquals("value2", qs.valueFor("name2"));
-         assertEquals("value3", qs.valueFor("name3"));
-     }
-
 	
 	@Test
 	public void testNoNameValuePairs() {
