@@ -18,10 +18,5 @@ public class CalculadoraTest {
 	public void somaTest() {
 		assertEquals(10, calculadora.soma(5,5),0.01);
 	}
-	
-	@Test
-	public void subtracaoTest() {
-		assertEquals(0, calculadora.subtracao(5,5),0.01);
-	}
 
 }
