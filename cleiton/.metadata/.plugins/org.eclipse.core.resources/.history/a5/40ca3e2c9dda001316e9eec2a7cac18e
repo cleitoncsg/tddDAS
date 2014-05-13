@@ -22,9 +22,7 @@ public class QueryStringTest {
 
 	@Test
 	public void testOneNameValuePair() {
-		
        assertEquals(1, qs.count());
-       assertEquals ("value", qs.valueFor ("nome"));
 	}
 	
 	@Test
