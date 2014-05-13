@@ -1,0 +1,45 @@
+package jamesshore.com;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class QueryStringTest {
+
+	private QueryString qs;
+	
+	@Before
+	public void setUp() throws Exception {
+		qs = new QueryString("name=value");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.out.println("Testando...");
+	}
+
+	@Test
+	public void testOneNameValuePair() {
+       assertEquals(1, qs.count());
+	}
+	
+	@Test
+	public void testNoNameValuePairs() {
+		qs = new QueryString("");
+		assertEquals(0, qs.count());
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testNull() {
+        try {
+            qs = new QueryString(null);
+            fail("Se for jogada um exceção");
+        }
+        catch (Exception e) {
+            // expected
+        }
+	}
+
+}

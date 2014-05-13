@@ -6,10 +6,6 @@ public class QueryString {
 	
 	public QueryString(String _query) {
 		name_query = _query;
-		
-		if(name_query == null){
-			throw new NullPointerException();
-		}
 	}
 
 	public long count() {

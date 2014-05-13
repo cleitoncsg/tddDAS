@@ -5,11 +5,10 @@ public class QueryString {
 	private String name_query;
 	
 	public QueryString(String _query) {
-		name_query = _query;
-		
 		if(name_query == null){
-			throw new NullPointerException();
+			throw new IllegalArgumentException();
 		}
+		name_query = _query;
 	}
 
 	public long count() {

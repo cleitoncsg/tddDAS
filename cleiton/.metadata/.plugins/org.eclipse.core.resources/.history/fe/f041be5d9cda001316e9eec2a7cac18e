@@ -8,7 +8,7 @@ public class QueryString {
 		name_query = _query;
 		
 		if(name_query == null){
-			throw new NullPointerException();
+			throw new IllegalArgumentException();
 		}
 	}
 
