@@ -11,6 +11,6 @@ public class Calculadora {
 	}
 	
 	public double produto(double a, double b){
-		return a*b;
+		return 25;
 	}
 }
