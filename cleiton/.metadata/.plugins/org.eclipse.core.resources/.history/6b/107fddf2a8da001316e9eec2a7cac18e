@@ -31,12 +31,7 @@ public class CalculadoraTest {
 	
 	@Test
 	public void divisaoTest() {
-		assertEquals(1, calculadora.divisao(5,5),0.01);
-	}
-	
-	@Test
-	public void restoDaDivisaoTest() {
-		assertEquals(0, calculadora.divisao(5,5),0.01);
+		assertEquals(1, calculadora.produto(5,5),0.01);
 	}
 
 }

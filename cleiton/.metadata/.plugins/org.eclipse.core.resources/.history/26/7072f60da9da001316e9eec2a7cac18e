@@ -33,10 +33,5 @@ public class CalculadoraTest {
 	public void divisaoTest() {
 		assertEquals(1, calculadora.divisao(5,5),0.01);
 	}
-	
-	@Test
-	public void restoDaDivisaoTest() {
-		assertEquals(0, calculadora.divisao(5,5),0.01);
-	}
 
 }
