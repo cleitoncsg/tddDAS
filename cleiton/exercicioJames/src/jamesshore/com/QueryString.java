@@ -27,6 +27,5 @@ public class QueryString {
 	          String[] nameAndValue = pair.split("=");
 	          _map.put(nameAndValue[0], nameAndValue[1]);
 	      }
-	  
 	  }
 }

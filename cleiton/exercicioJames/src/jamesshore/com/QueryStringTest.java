@@ -9,16 +9,6 @@ import org.junit.Test;
 public class QueryStringTest {
 
 	private QueryString qs;
-	
-	@Before
-	public void setUp() throws Exception {
-		qs = new QueryString("name=value");
-	}
-
-	@After
-	public void tearDown() throws Exception {
-		System.out.println("Testando...");
-	}
 
 	@Test
 	public void testOneNameValuePair() {
