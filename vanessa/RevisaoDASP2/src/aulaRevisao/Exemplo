@@ -1,0 +1,8 @@
+Em geometria, um problema comum é determinar quando há interseção entre duas linhas definidas por pontos
+A para B e C para D.
+Usando TDD, desenvolva uma classe Linha2D com as seguintes funcionalidades.
+Construida com os pontos A=(x1,y1) e B=(x2,y2). Uma linha L1 deve ser capaz de responder a seguinte pergunta:
+"Há interseção com a Linha2"?
+
+Pair programming - Cada 10min um aluno assume
+Hangout Gravado no Youtube
