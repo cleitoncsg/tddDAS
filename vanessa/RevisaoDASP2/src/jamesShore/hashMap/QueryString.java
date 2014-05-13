@@ -21,7 +21,10 @@ public class QueryString {
 	public int count() {
 		if(getQuery()=="")
 			return 0;
-		else return 1;
+		else{
+			String[] pairs = getQuery().split("&");
+			return pairs.length;
+		}
 	}
 
 	public String valueFor(String name) {
