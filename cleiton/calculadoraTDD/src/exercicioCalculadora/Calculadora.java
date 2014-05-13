@@ -22,5 +22,9 @@ public class Calculadora {
 		return a/b;
 	}
 	
+	public int restoDaDivisao(int a, int b){
+		return 0;
+	}
+	
 	
 }
