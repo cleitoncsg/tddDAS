@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="QueryStringTest" project="RevisaoDASP2" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="jamesShore.hashMap.QueryStringTest" time="0.001">
+    <testcase name="testOneNameValuePair" classname="jamesShore.hashMap.QueryStringTest" time="0.001"/>
+    <testcase name="testNoNameValuePairs" classname="jamesShore.hashMap.QueryStringTest" time="0.0"/>
+    <testcase name="testNull" classname="jamesShore.hashMap.QueryStringTest" time="0.0"/>
+    <testcase name="testValueFor" classname="jamesShore.hashMap.QueryStringTest" time="0.0"/>
+  </testsuite>
+</testrun>
