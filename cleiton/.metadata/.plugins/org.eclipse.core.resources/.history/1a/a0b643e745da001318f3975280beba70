@@ -25,9 +25,8 @@ public class QueryStringTest {
        assertEquals(1, qs.count());
 	}
 	
-	@Test
 	public void testNoNameValuePairs() {
-	      qs = new QueryString("");
+	      qs = new QueryString("ttt");
 	      assertEquals(0, qs.count());
 	}
 
