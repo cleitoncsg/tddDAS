@@ -24,8 +24,8 @@ public class QueryString {
 		else return 1;
 	}
 
-	public String valueFor(String string) {
-		String[] value = getQuery().split("=");
-		return value[1];
+	public String valueFor(String name) {
+		String[] nameAndValue = getQuery().split("=");
+		return nameAndValue[1];
 	}
 }

@@ -36,4 +36,14 @@ public class QueryStringTest {
 		qs = new QueryString("name=value");
 		assertEquals("value", qs.valueFor("name"));
 	}
+	
+	
+	@Test
+	public void testMultipleNameValuePairs(){
+		qs = new QueryString("name1=value1&name2=value2&name3=value3");
+		assertEquals("value1", qs.valueFor("name1"));
+		assertEquals("value2", qs.valueFor("name2"));
+		assertEquals("value3", qs.valueFor("name3"));
+		
+	}
 }
