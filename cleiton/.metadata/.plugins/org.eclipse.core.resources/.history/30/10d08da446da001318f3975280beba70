@@ -9,10 +9,8 @@ public class QueryString {
 	}
 
 	public long count() {
-		 if ("".equals(name_query))
-			 return 0;
-         else 
-        	 return 1;
+		 if ("".equals(name_query)) return 0;
+         else return 1;
 	}
 
 
