@@ -35,10 +35,12 @@ public class QueryStringTest {
 	public void testNull() {
         try {
             qs = new QueryString(null);
-            fail("Se for jogada um exceção");
+            fail("Should throw exception");
         }
         catch (NullPointerException e) {
             // expected
         }
-	}
+	 }
+
+
 }

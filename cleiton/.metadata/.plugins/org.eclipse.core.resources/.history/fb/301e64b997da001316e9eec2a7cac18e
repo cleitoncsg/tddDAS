@@ -9,7 +9,7 @@ public class QueryString {
 	}
 
 	public long count() {
-		 if (name_query == "")
+		 if ("".equals(name_query))
 			 return 0;
          else 
         	 return 1;
