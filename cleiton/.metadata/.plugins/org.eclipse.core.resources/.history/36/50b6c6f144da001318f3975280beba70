@@ -1,0 +1,9 @@
+package jamesshore.com;
+
+public class QuereyString {
+
+	public int count() {
+		return 1;
+	}
+
+}
