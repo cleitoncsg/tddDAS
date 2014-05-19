@@ -1,0 +1,14 @@
+package retangulo;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class RetanguloTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
