@@ -25,11 +25,6 @@ public class ConversorRomanotest {
 		assertEquals("D",conversor.converterParaRomano(500));
 		assertEquals("CM",conversor.converterParaRomano(900));
 		assertEquals("M",conversor.converterParaRomano(1000));
-		
-	}
-	
-	@Test (expected = IllegalArgumentException.class)
-	public void verificarConversaoDeNumeroNegativo(){
 		assertEquals("X",conversor.converterParaRomano(-10));
 	}
 

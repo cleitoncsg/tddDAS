@@ -44,40 +44,40 @@ public class ConversorRomano {
             	numeroRomano = numeroRomano + "L";
             	numero -= 50;
             }
-            
-            //para números >= 40, use XL
-            while(numero >= 40){
-            	numeroRomano += "XL";
-            	numero -= 40;
+            //para 50 -> L
+            while(numero >= 50) {
+                numeroRomano += "L";
+                numero -= 50;
             }
-            //para números >= 10, use X
-            while(numero >= 10){
-            	numeroRomano += "X";
-            	numero -= 10;
+            //para 40 -> XL
+            while(numero >= 40) {
+                numeroRomano += "XL";
+                numero -= 40;
             }
-            //para numero >= 9, use IX
-            while(numero >= 9){
-            	numeroRomano = numeroRomano + "IX";
-            	numero = numero - 9;
+            //para 10 -> X
+            while(numero >= 10) {
+                numeroRomano += "X";
+                numero -= 10;
             }
-            //para numero >= 5, use V
+            //para 9 -> IX
+            while(numero >= 9) {
+                numeroRomano += "IX";
+                numero -= 9;
+            }
+            //para 5 -> V
             while(numero >= 5) {
                 numeroRomano += "V";
                 numero -= 5;
             }
-            //para numero >= 4, use IV
+            //para 4 -> IV
             while(numero >= 4) {
                 numeroRomano += "IV";
                 numero -= 4;
             }
-            //para numeros >= 3, use I
+            //para 1 -> I
             while(numero >= 1) {
                 numeroRomano += "I";
                 numero -= 1;
-            }
-        
-            if(numero < 0){
-            	throw new IllegalArgumentException("Numero negativo!");
             }
         
 			return numeroRomano;
