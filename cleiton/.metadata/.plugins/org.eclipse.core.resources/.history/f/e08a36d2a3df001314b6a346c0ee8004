@@ -16,8 +16,8 @@ public class RetanguloTest {
 
 	@Test
 	public void constroiRentagulotest() {
-		
-		assertTrue(retangulo.verificaSeEhRetangulo(0, 0, 1, 2) );
+
+		assertTrue(retangulo.verificaSeEhRetangulo(1,2,4,5);
 	}
 
 	
