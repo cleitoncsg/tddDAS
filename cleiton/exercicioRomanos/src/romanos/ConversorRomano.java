@@ -82,5 +82,9 @@ public class ConversorRomano {
         
 			return numeroRomano;
 	   }
+
+	public int converterParaInteiro(String Romano) {
+		return 1;
+	}
 	
 }
