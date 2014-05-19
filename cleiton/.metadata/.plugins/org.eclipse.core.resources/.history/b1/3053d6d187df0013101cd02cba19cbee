@@ -82,15 +82,5 @@ public class ConversorRomano {
         
 			return numeroRomano;
 	   }
-
-	public int converterParaInteiro(String romano) {
-		if(romano == "I")
-			return 1;
-		else if(romano == "II"){
-			return 2;
-		}
-		else
-			return 3;
-	}
 	
 }

@@ -36,8 +36,6 @@ public class ConversorRomanotest {
 	@Test
 	public void converteParaInteiro(){
 		assertEquals(1,conversor.converterParaInteiro("I"));
-		assertEquals(2,conversor.converterParaInteiro("II"));
-		assertEquals(3,conversor.converterParaInteiro("III"));
 	}
 
 }
