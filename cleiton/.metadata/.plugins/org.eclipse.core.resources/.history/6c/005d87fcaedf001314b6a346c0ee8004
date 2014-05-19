@@ -1,7 +1,8 @@
 package retangulo;
 
 public class Retangulo {
-	
+
+
 	public boolean verificaSeEhRetangulo(double xmin,double ymin,double xmax,double ymax) {
 		
 		if( (ymax - ymin) > 0 && (xmax - xmin) > 0)
@@ -18,4 +19,5 @@ public class Retangulo {
 		double area = Math.pow( (ymax - ymin)*(xmax - xmin), 2);
 		return area;
 	}
+
 }
