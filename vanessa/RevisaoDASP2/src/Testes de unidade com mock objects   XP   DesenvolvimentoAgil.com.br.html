@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang='pt'>
+  <head>
+	<title>Testes de unidade com mock objects | XP | DesenvolvimentoAgil.com.br</title>
+	<meta charset='utf-8' />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="teste mock objects object prática extreme programming xp extrema" />
+	<meta name="description" content="Automação de testes de unidade com mock objects." />
+	<meta name="robots" content="index,follow" />
+
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="screen" />
+
+	<!-- BREAK POINTS / RESPONSIVE -->
+	<link rel="stylesheet" href="/stylesheets/tablet.css" media="screen and (min-width : 720px) and (max-width : 1000px)" />
+	<link rel="stylesheet" href="/stylesheets/mobile.css" media="screen and (max-width : 720px)">
+
+
+	<!-- JS -->
+	<script type='text/javascript' src='/scripts/jquery.min.js'></script>
+	<script type='text/javascript' src='/scripts/shCore.js'></script>
+	<script type='text/javascript' src='/scripts/shBrushXml.js'></script>
+	<script type='text/javascript' src='/scripts/shBrushJava.js'></script>
+	<script type='text/javascript' src='/scripts/shBrushRuby.js'></script>
+	<script type='text/javascript' src='/scripts/scripts.js'></script>
+</head>
+
+  <body>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16326763-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <section id="wrapper">
+      <header id="header">
+        <div id="masthead">
+          <div class="center">
+            <h1><a href="/" id="logo" title="DesenvolvimentoAgil.com.br">DesenvolvimentoAgil.com.br</a></h1>
+            <nav id="main-navigation">
+              <ul>
+                <li class="current"><a href="/xp" title="XP">XP</a></li>
+                <li><a href="/scrum" title="Scrum">Scrum</a></li>
+              </ul>
+            </nav>
+            <a href="#" id="content-table-link"><span>≡</span> Tabela de Conteúdo (XP)</a>
+          </div>
+        </div>
+        <div id="content-table">
+  <div class="center">
+    <h2><a href="/xp" title="XP">XP</a></h2>
+    <nav id="content-navigation">
+
+      <div class="topic">
+        <h3><a href="/xp/valores">Valores</a></h3>
+        <ul>
+          <li><a href="/xp/valores/comunicacao">Comunicação</a></li>
+          <li><a href="/xp/valores/coragem">Coragem</a></li>
+          <li><a href="/xp/valores/feedback">Feedback</a></li>
+          <li><a href="/xp/valores/respeito">Respeito</a></li>
+          <li><a href="/xp/valores/simplicidade">Simplicidade</a></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <h3><a href="/xp/principios">Princípios</a></h3>
+        <ul>
+          <li><a href="/xp/principios/auto_semelhanca">Auto-semelhança</a></li>
+          <li><a href="/xp/principios/beneficio_mutuo">Benefício Mútuo</a></li>
+          <li><a href="/xp/principios/diversidade">Diversidade</a></li>
+          <li><a href="/xp/principios/economia">Economia</a></li>
+          <li><a href="/xp/principios/falha">Falha</a></li>
+          <li><a href="/xp/principios/fluidez">Fluidez</a></li>
+          <li><a href="/xp/principios/humanismo">Humanismo</a></li>
+          <li><a href="/xp/principios/melhoria">Melhoria</a></li>
+          <li><a href="/xp/principios/oportunidade">Oportunidade</a></li>
+          <li><a href="/xp/principios/passos_bebe">Passos de Bebê</a></li>
+          <li><a href="/xp/principios/qualidade">Qualidade</a></li>
+          <li><a href="/xp/principios/redundancia">Redundância</a></li>
+          <li><a href="/xp/principios/reflexao">Reflexão</a></li>
+          <li><a href="/xp/principios/responsabilidade_aceita">Responsabilidade Aceita</a></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <h3><a href="/xp/papeis">Papéis</a></h3>
+        <ul>
+          <li><a href="/xp/papeis/analistas_teste">Analistas de Teste</a></li>
+          <li><a href="/xp/papeis/arquitetos">Arquitetos</a></li>
+          <li><a href="/xp/papeis/designers_interacao">Designers de Interação</a></li>
+          <li><a href="/xp/papeis/executivos">Executivos</a></li>
+          <li><a href="/xp/papeis/gerentes_projetos">Gerentes de Projeto</a></li>
+          <li><a href="/xp/papeis/gerentes_produto">Gerentes de Produto</a></li>
+          <li><a href="/xp/papeis/programadores">Programadores</a></li>
+          <li><a href="/xp/papeis/rh">Recursos Humanos</a></li>
+          <li><a href="/xp/papeis/redatores_tecnicos">Redatores Técnicos</a></li>
+          <li><a href="/xp/papeis/usuarios">Usuários</a></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <h3>Outros Recursos</h3>
+        <ul>
+          <li><a href="/xp/dissertacaoXP.pdf" target="_blank">Dissertação de Mestrado sobre XP</a></li>
+          <li><a href="http://improveit.com.br/podcast">Podcast</a></li>
+          <li><a href="/xp/livros">Livros Recomendados</a></li>
+          <li><a href="/xp/listas">Listas de Discussão</a></li>
+          <li><a href="/xp/praticas/tdd/mock_objects">Testes Automatizados com Mock Objects</a></li>
+          <li><a href="/xp/praticas/tdd/emma">Análise de cobertura de testes automatizados usando Emma</a></li>
+          <li><a href="/xp/praticas/tdd/rcov">Análise de cobertura de testes automatizados usando Rcov</a></li>
+        </ul>
+      </div>
+
+      <div class="topic main-category last">
+        <h3><a href="/xp/praticas">Práticas</a></h3>
+        
+        <ul>
+          <li><h4><a href="/xp/praticas#primarias">Primárias</a></h4></li>
+          <li><a href="/xp/praticas/ambiente_informativo">Ambiente Informativo</a></li>
+          <li><a href="/xp/praticas/build_dez">Build de Dez Minutos</a></li>
+          <li><a href="/xp/praticas/ciclo_semanal">Ciclo Semanal</a></li>
+          <li><a href="/xp/praticas/ciclo_trimestral">Ciclo Trimestral</a></li>
+          <li><a href="/xp/praticas/tdd">Desenvolvimento Orientado a Testes</a></li>
+          <li><a href="/xp/praticas/design_incremental">Design Incremental</a></li>
+          <li><a href="/xp/praticas/equipe_integral">Equipe Integral</a></li>
+          <li><a href="/xp/praticas/folga">Folga</a></li>
+          <li><a href="/xp/praticas/historias">Histórias</a></li>
+          <li><a href="/xp/praticas/integracao">Integração Contínua</a></li>
+          <li><a href="/xp/praticas/programacao_par">Programação em Par</a></li>
+          <li><a href="/xp/praticas/sentar_junto">Sentar-se Junto</a></li>
+          <li><a href="/xp/praticas/trabalho_energizado">Trabalho Energizado</a></li>
+        </ul>
+
+        <ul>
+          <li><h4><a href="/xp/praticas#corolarias">Corolárias</a></h4></li>
+          <li><a href="/xp/praticas/raiz_problema">Análise da Raiz do Problema</a></li>
+          <li><a href="/xp/praticas/codigo_unificado">Base de Código Unificada</a></li>
+          <li><a href="/xp/praticas/codigo_coletivo">Código Coletivo</a></li>
+          <li><a href="/xp/praticas/codigo_testes">Código e Testes</a></li>
+          <li><a href="/xp/praticas/continuidade_equipe">Continuidade da Equipe</a></li>
+          <li><a href="/xp/praticas/contrato">Contrato de Escopo Negociável</a></li>
+          <li><a href="/xp/praticas/cliente_real">Envolvimento do Cliente Real</a></li>
+          <li><a href="/xp/praticas/equipes_encolhem">Equipes que Encolhem</a></li>
+          <li><a href="/xp/praticas/implantacao_diaria">Implantação Diária</a></li>
+          <li><a href="/xp/praticas/implantacao_incremental">Implantação Incremental</a></li>
+          <li><a href="/xp/praticas/pagar_por_uso">Pagar Por Uso</a></li>
+        </ul>
+
+        <ul class="last">
+          <li><h4>Outras</h4></li>
+          <li><a href="/xp/praticas/reuniao_pe">Reunião em Pé</a></li>
+          <li><a href="/xp/praticas/refatoracao">Refatoração</a></li>
+          <li><a href="/xp/praticas/metafora">Metáfora</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+      </header>
+      <article id="content" class="center article">
+        
+        <h1 id="mock_objects">Testes com Mock Objects</h1>
+        
+        <p><a href="/xp/manifesto_agil">Processos ágeis</a> como o <a href="/xp">Extreme Programming</a> vêm popularizando o conceito de <a href="/xp/praticas/tdd">automação de testes</a>, sobretudo através do uso de <a href="/xp/praticas/tdd">testes de unidade</a>. Mas estes testes, embora sejam bastante úteis para manter a boa saúde de um software, freqüentemente são difíceis de serem criados.<br/>
+<a href="/xp/praticas/tdd">Testes de unidade</a> procuram testar classes de um sistema isoladamente. Classes em um sistema normalmente alcançam seus objetivos com a ajuda de outras. Não funcionam isoladamente, freqüentemente se comunicam com outros elementos da aplicação. Quando construímos um <a href="/xp/praticas/tdd">teste de unidade</a>, um dos principais desafios é exatamente isolar a classe que está sendo testada, para que nenhuma outra classe do sistema seja envolvida no teste. Para compreender o problema, vejamos um pequeno exemplo.</p>
+
+<h2>Exemplo de dificuldade para testar classes isoladamente</h2>
+
+<p>Imagine que estivéssemos desenvolvendo um software para automatizar as operações de um restaurante. Entre as muitas funcionalidades desse sistema, uma essencial seria a geração da conta, que usaremos como exemplo. Uma conta típica tem muitas características, mas iremos nos preocupar apenas com a mais importante: o total a ser pago. Nesse exemplo, iremos implementar um teste para validar se o total da conta está sendo calculado corretamente.</p>
+
+<p>Nossa classe <code>Conta</code> foi modelada de acordo com o diagrama apresentado na <a href="#Figura1">Figura 1</a>.</p>
+
+<p><a name="Figura1">
+<img src="/images/xp/praticas/tdd/mock_objects/diagrama.png" alt="Figura 1. Classes usadas para modelar uma conta." /><br/>
+</a>
+<strong>Figura 1</strong>. Classes usadas para modelar uma conta.</p>
+
+<p>A impressão de uma conta, como pode ser observado na <a href="#Figura2">Figura 2</a>, é composta por linhas. Cada linha indica um item, sua quantidade, e o preço total (quantidade de itens da linha multiplicada pelo preço unitário do item). Um item, por sua vez, possui um nome e um preço unitário. Na parte inferior da impressão da conta é apresentado o valor total a ser pago, que é, como esperado, o somatório do valor total de cada linha da conta.</p>
+
+<p><a name="Figura2">
+<img src="/images/xp/praticas/tdd/mock_objects/conta.png" alt="Figura 2. Exemplo de uma conta em um restaurante." /><br/>
+</a>
+<strong>Figura 2.</strong> Exemplo de uma conta em um restaurante.</p>
+
+<p>Na <a href="#Listagem1">Listagem 1</a>, você encontrará o teste criado, bem como a respectiva classe <code>Conta</code>, cujo método <code>total()</code> desejamos testar. Note que as outras duas classes modeladas precisaram ser usadas durante a criação do teste: <code>LinhaItem</code> e <code>Item</code>. Isso tornou o método de teste maior, mais complexo e mais demorado de ser implementado. Além disso, essa forma de confeccionar o teste faz com que não seja verdadeiramente um <a href="/xp/praticas/tdd">teste de unidade</a>, pois a classe <code>Conta</code> não está sendo testada isoladamente. Se o teste deixa de funcionar devido a uma falha no código, isso pode ter sido causado por uma falha na classe <code>Conta</code>, ou mesmo em <code>LinhaItem</code> ou <code>Item</code>.</p>
+
+<p>Isso é ruim, porque quando fazemos <a href="/xp/praticas/tdd">testes de unidade</a>, procuramos isolar cada unidade muito bem, de modo que eventuais erros nos testes possam resultar de falhas em um único ponto (uma única unidade) do software. Erros identificados dessa forma são mais fáceis de serem corrigidos do que problemas que podem ter sido causados em inúmeros pontos diferentes da aplicação.</p>
+
+<p><a name="Listagem1"></a>
+<strong>Classe TestCase</strong></p>
+
+<div>
+
+<pre name="code" class="java">  
+    import junit.framework.TestCase;  
+
+    public class ContaTeste extends TestCase {
+        
+        public void testTotalNota() {
+            Conta conta = new Conta();
+
+            Item lasanha = new Item();
+            lasanha.setNome("Lasanha a Bolognesa");
+            lasanha.setPreco(10);
+
+            Item refrigerante = new Item();
+            refrigerante.setNome("Guarana");
+            refrigerante.setPreco(1);
+
+            Item sorvete = new Item();
+            sorvete.setNome("Sorvete de Chocolate");
+            sorvete.setPreco(4);
+
+            Item cafezinho = new Item();
+            cafezinho.setNome("Cafe Expresso");
+            cafezinho.setPreco(2);
+
+            LinhaItem linhaLasanha = new Linha(lasanha, 2);
+            LinhaItem linhaRefrigerante = new Linha(refrigerante, 2);
+            LinhaItem linhaSorvete = new Linha(sorvete, 1);
+            LinhaItem linhaCafezinho = new Linha(cafezinho, 2);
+
+            conta.adiciona(linhaLasanha);
+            conta.adiciona(linhaRefrigerante);
+            conta.adiciona(linhaSorvete);
+            conta.adiciona(linhaCafezinho);
+
+            assertEquals(30, conta.total());
+        }
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Classe Conta</strong></p>
+
+<div>
+    
+<pre name="code" class="java">
+    public class Conta {
+        private int total;
+
+        public void adiciona(LinhaItem linhaItem) {
+            total += linhaItem.total();
+        }
+      
+        public int total() {
+            return total;
+        }
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Classe LinhaItem</strong></p>
+
+<div>
+    
+<pre name="code" class="java">
+    public class LinhaItem {
+        private Item item;
+        private int quantidade;
+
+        public LinhaItem(Item item, int quantidade) {
+            this.item = item;
+            this.quantidade = quantidade;
+        }
+      
+        public int total() {
+            return item.getPreco() * quantidade;
+        }
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Classe Item</strong></p>
+
+<div>
+    
+<pre name="code" class="java">  
+    public class Item {
+        private String nome;
+        private int preco;
+
+        //... Métodos get/set
+    }
+</pre>  
+
+</div>
+
+
+<p><strong>Listagem 1.</strong> Teste da conta sem usar mock objects.</p>
+
+<h2>Entram os mock objects</h2>
+
+<p>Uma solução eficaz é o uso de <strong>mock objects</strong> (objetos “de mentira” ou objetos substitutos), que permitem isolar as classes de um sistema de forma bastante simples. No nosso exemplo, a classe <code>Conta</code> depende diretamente da classe <code>LinhaItem</code>. Usar um mock object significa que, quando estivermos testando, ao invés de usarmos a classe <code>LinhaItem</code>, usaremos uma outra, que “finge” ser essa classe, mas é mais simples e mais fácil de ser usada durante os testes (além disso, temos total controle sobre ela, pois é criada especialmente para os testes).</p>
+
+<p>Veja as modificações que foram feitas na <a href="#Listagem2">Listagem 2</a>. Agora, durante o teste, usamos um objeto especial, chamado <code>LinhaMock</code>. Trata-se de um objeto que já recebe no construtor o valor total de uma linha. A classe <code>LinhaItem</code>, por sua vez, passará a implementar uma <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a> que possui um único método, <code>total()</code>, que é exatamente o que será utilizado na classe <code>Conta</code>, como vemos a seguir:</p>
+
+<p><a name="Listagem2"></a></p>
+
+<div>
+    
+<pre name="code" class="java">  
+    import junit.framework.TestCase;
+
+    public class ContaTeste extends TestCase {
+        public void testTotalNota() {
+            Conta conta = new Conta();
+            conta.adiciona(new LinhaMock(20));
+            conta.adiciona(new LinhaMock(2));
+            conta.adiciona(new LinhaMock(4));
+            conta.adiciona(new LinhaMock(4));
+            assertEquals(30, conta.total());
+        }
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Nova interface Linha</strong></p>
+
+<div>
+    
+<pre name="code" class="java">  
+    public interface Linha {
+        int total();
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Classe LinhaMock</strong></p>
+
+<div>
+    
+<pre name="code" class="java">
+    public class LinhaMock implements Linha {
+        private int total;
+
+        public LinhaMock(int total) {
+            this.total = total;
+        }
+        
+        public int total() {
+            return total;
+        }
+    }
+</pre>  
+
+</div>
+
+
+<p><strong>Listagem 2.</strong> Teste da conta usando mock objects.</p>
+
+<p>Usando uma <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a> <code>Linha</code>, podemos evitar o uso da classe concreta <code>LinhaItem</code> durante os testes e, em seu lugar, usar uma outra classe que finge ser a classe <code>LinhaItem</code>. Isso só é possível porque estamos usando uma <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a>.</p>
+
+<p>Um mock object é um objeto que se comporta como um substituto mais conveniente que o objeto real. Ele resolve uma dependência importante para que um teste de unidade possa ser executado, mantendo o máximo de isolamento. Além disso, freqüentemente é mais fácil instanciar e configurar um mock de forma apropriada para ser utilizado em um teste. Em alguns casos, o uso do mock também permite evitar acessos a recursos mais demorados, como bancos de dados ou recursos na rede. Isso permite que os testes possam ser executados rapidamente e de forma mais previsível.</p>
+
+<h2>Usando o <a href="http://www.easymock.org">EasyMock</a></h2>
+
+<p>O uso da classe <code>LinhaMock</code> facilitou nossos testes, mas nem sempre é tão fácil escrever uma classe que possa atuar como um mock object. Por exemplo, suponha que quiséssemos testar um <a href="http://en.wikipedia.org/wiki/Servlet">servlet</a> que implementa um mecanismo simplificado de <a href="http://en.wikipedia.org/wiki/Login">login</a>. Imagine que o <a href="http://en.wikipedia.org/wiki/Servlet">servlet</a> recebesse dois parâmetros: o <a href="http://en.wikipedia.org/wiki/Login">login</a> e a senha de um usuário.</p>
+
+<p>Sabemos que para obter parâmetros em um <a href="http://en.wikipedia.org/wiki/Servlet">servlet</a>, usamos o método <code>getParameter(“nome_parametro”)</code> da <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a> <code>HttpServletRequest</code>, como apresentado na <a href="#Listagem3">Listagem 3</a>. Podemos escrever um teste para o método <code>loginValido(HttpServletRequest request)</code> criando um mock object substituindo um objeto concreto que implemente a <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a> <code>HttpServletRequest</code>. Entretanto, esta é uma <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a> que possui mais de dez métodos, e estamos interessados em apenas um deles: <code>getParameter()</code>. Criar um mock object significaria criar uma classe com a implementação desejada do método <code>getParameter()</code> e uma implementação vazia ou mínima de todos os demais métodos. Isso seria trabalhoso e poluiria a aplicação com código desnecessário.</p>
+
+<p><a name="Listagem3"></a></p>
+
+<div>
+    
+<pre name="code" class="java">
+    package jm;
+
+    import java.io.IOException;
+
+    import javax.servlet.ServletException;
+    import javax.servlet.ServletOutputStream;
+    import javax.servlet.http.HttpServlet;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
+
+    public class LoginServlet extends HttpServlet {
+        protected void doGet(HttpServletRequest request,
+        HttpServletResponse response) 
+        throws ServletException, IOException
+        {
+            ServletOutputStream out = response.getOutputStream();
+            if (loginValido(request)) {
+                out.println("Bem-vindo");
+            } else {
+                out.println("Acesso Negado");
+            }
+        }
+
+        public boolean loginValido(HttpServletRequest request) {
+            if ("patricia".equals(request.getParameter("login")) && 
+                "floresta".equals(request.getParameter("senha"))) {
+                return true;
+            }
+            return false;
+        }
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Listagem 3.</strong> Servlet implementando um mecanismo de login simplificado.</p>
+
+<p>Podemos usar uma ferramenta chamada <a href="http://www.easymock.org">EasyMock</a> para gerar mock objects (também chamados de “mocks”) mais facilmente. Veja na <a href="#Listagem4">Listagem 4</a> um exemplo de teste do <a href="http://en.wikipedia.org/wiki/Login">login</a> usando o <a href="http://www.easymock.org">EasyMock</a>. Com ele, ao invés de criarmos uma classe que implemente uma <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a> específica, deixamos que o <a href="http://www.easymock.org">EasyMock</a> faça isso dinamicamente, o que evita que seja preciso criar um novo arquivo para nosso mock.</p>
+
+<p>Para usar o <a href="http://www.easymock.org">EasyMock</a>, você deve fazer o download dele <a href="http://www.easymock.org/Downloads.html">aqui</a>. Em seguida, extraia a biblioteca <code>easymock.jar</code> e coloque-a no <code>CLASSPATH</code> de seu projeto.</p>
+
+<p><a name="Listagem4"></a></p>
+
+<div>
+    
+<pre name="code" class="java">
+    import javax.servlet.http.HttpServletRequest;
+    import junit.framework.TestCase;
+    import static org.easymock.EasyMock.*;
+
+    public class LoginTeste extends TestCase {
+        public void testLoginComSucesso() {
+            HttpServletRequest requestMock = createMock(HttpServletRequest.class);
+            expect(requestMock.getParameter("login")).andReturn("patricia");
+            expect(requestMock.getParameter("senha")).andReturn("floresta");
+            replay(requestMock);
+
+            LoginServlet loginServlet = new LoginServlet();
+            assertTrue(loginServlet.loginValido(requestMock));
+        }
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Listagem 4.</strong> Testa se login e senha são válidos usando EasyMock.</p>
+
+<p>O primeiro passo ao usar o <a href="http://www.easymock.org">EasyMock</a> é solicitar a criação de um mock para uma <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a> em particular. Nesse exemplo, pedimos que seja criado um mock da <a href="http://en.wikipedia.org/wiki/Interface_%28Java%29">interface</a> <code>HttpServletRequest</code>:</p>
+
+<div>
+    
+<pre name="code" class="java">
+    HttpServletRequest requestMock = createMock(HttpServletRequest.class);
+</pre>
+
+</div>
+
+
+<p>No passo seguinte, criamos comportamentos específicos no mock. No nosso exemplo, o mock do objeto <code>request</code> irá esperar que alguma outra classe acesse o seu método <code>getParameter()</code>, passando a string “login” como parâmetro. Quando isso ocorrer, o mock deverá retornar a string “patricia”. Além disso, programamos <code>requestMock.getParameter(“senha”)</code> para retornar a string “floresta”, como mostrado a seguir.</p>
+
+<div>
+    
+<pre name="code" class="java">
+    expect(requestMock.getParameter("login")).andReturn("patricia");
+    expect(requestMock.getParameter("senha")).andReturn("floresta");
+</pre>
+
+</div>
+
+
+<p>Esses passos representam a preparação do mock object e indicam como ele deve se comportar quando estiver em uso em algum teste. Terminada a preparação, precisamos informar ao mock object que ele já não está mais sendo preparado, ou seja, é hora da ação. Para isso, usamos o método <code>replay(requestMock)</code>:</p>
+
+<div>
+    
+<pre name="code" class="java">
+    replay(requestMock);
+    LoginServlet loginServlet = new LoginServlet();
+    assertTrue(loginServlet.loginValido(requestMock));
+</pre>  
+
+</div>
+
+
+<p>A partir desse ponto o mock object pode ser usado normalmente, onde antes teria sido necessário utilizar um objeto real da aplicação.</p>
+
+<p>Os métodos usados para programar o mock object ficam disponíveis para a classe de testes através de um <code>import</code> estático dos métodos da classe <code>EasyMock</code>. Isso implica na necessidade de se usar o <a href="http://java.sun.com/javase/reference/api.jsp">Java</a> 5 ou superior:</p>
+
+<div>
+    
+<pre name="code" class="java">
+    import static org.easymock.EasyMock.*;
+</pre>  
+
+</div>
+
+
+<p>Se você estiver usando uma versão mais antiga do <a href="http://java.sun.com/javase/reference/api.jsp">Java</a>, é possível usar uma versão do <a href="http://www.easymock.org">EasyMock</a> anterior a 2.0. Porém nesse caso a forma de implementar os mocks seria ligeiramente diferente. Veja um exemplo abaixo:</p>
+
+<div>
+    
+<pre name="code" class="java">
+    MockControl mockControl = MockControl.createControl(HttpServletRequest.class);
+    HttpServletRequest requestMock = (HttpServletRequest) mockControl.getMock();
+    mockControl.expectAndReturn(requestMock.getParameter("login"), "patricia");
+    mockControl.expectAndReturn(requestMock.getParameter("senha"), "floresta");
+    mockControl.replay();
+</pre>  
+
+</div>
+
+
+<h2>Verificando expectativas</h2>
+
+<p>Suponha que o <a href="http://en.wikipedia.org/wiki/Servlet">servlet</a> tivesse sido programado de forma diferente, tal como é mostrado na <a href="#Listagem5">Listagem 5</a>. Nesse caso, não seria possível fazer o teste utilizando um <code>assert</code> do <a href="http://www.junit.org">JUnit</a>, pois na prática o teste teria que verificar qual página foi escolhida para dar continuidade à execução: <code>bem-vindo.jsp</code> ou <code>acessoNegado.jsp</code>.</p>
+
+<p><a name="Listagem5"></a></p>
+
+<div>
+    
+<pre name="code" class="java">
+    import java.io.IOException;
+    import javax.servlet.RequestDispatcher;
+    import javax.servlet.ServletException;
+    import javax.servlet.http.HttpServlet;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
+
+    public class LoginServlet extends HttpServlet {
+        protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+        throws ServletException, IOException {
+            String proximaPagina;
+            if ("patricia".equals(request.getParameter("login")) && 
+                "floresta".equals(request.getParameter("senha"))) {
+                proximaPagina = "bem-vindo";
+            } else {
+                proximaPagina = "acessoNegado";
+            }
+            
+            RequestDispatcher requestDispatcher = 
+                request.getRequestDispatcher(proximaPagina + ".jsp");
+            requestDispatcher.forward(request, response);
+        }
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Listagem 5.</strong> Servlet modificado.</p>
+
+<p>Usando o <a href="http://www.easymock.org">EasyMock</a>, é possível criar um teste que resolva esse problema, conforme é mostrado na <a href="#Listagem6">Listagem 6</a>.</p>
+
+<p><a name="Listagem6"></a></p>
+
+<div>
+    
+<pre name="code" class="java">
+    import javax.servlet.RequestDispatcher;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
+    import static org.easymock.EasyMock.*;
+    import junit.framework.TestCase;
+
+    public class LoginTeste extends TestCase {
+        public void testLoginComSucesso() throws Exception {
+            LoginServlet loginServlet = new LoginServlet();
+
+            HttpServletRequest requestMock = requestMock();
+            loginServlet.doGet(requestMock, responseMock());
+            verify(requestMock);
+        }
+
+        private HttpServletRequest requestMock() {
+            HttpServletRequest requestMock = createMock(HttpServletRequest.class);
+            expect(requestMock.getParameter("login")).andReturn("patricia");
+            expect(requestMock.getParameter("senha")).andReturn("floresta");
+            expect(requestMock.getRequestDispatcher("bem-vindo.jsp")).
+                andReturn(requestDispatcher());
+            replay(requestMock);
+            return requestMock;
+        }
+
+        private RequestDispatcher requestDispatcher() {
+            RequestDispatcher dispatcherMock = createNiceMock(RequestDispatcher.class);
+            replay(dispatcherMock);
+            return dispatcherMock;
+        }
+
+        private HttpServletResponse responseMock() throws Exception {
+            HttpServletResponse responseMock = createMock(HttpServletResponse.class);
+            replay(responseMock);
+            return responseMock;
+        }
+    }
+</pre>
+
+</div>
+
+
+<p><strong>Listagem 6.</strong> Teste usando verify() do EasyMock.</p>
+
+<p>Veja a parte mais importante desta listagem:</p>
+
+<div>
+    
+<pre name="code" class="java">
+    private HttpServletRequest requestMock() {
+    HttpServletRequest requestMock = createMock(HttpServletRequest.class);
+    (...)
+    expect(requestMock.getRequestDispatcher("bem-vindo.jsp")).
+        andReturn(requestDispatcher());
+    replay(requestMock);
+</pre>
+
+</div>
+
+
+<p>Caso o código da aplicação esteja correto, o mock espera que seu método <code>getRequestDispatcher(“bem-vindo.jsp”)</code> seja chamado. Caso isso não ocorra, um erro será lançado pelo método <code>verify(requestMock)</code>, tal como foi usado a seguir:</p>
+
+<div>
+    
+<pre name="code" class="java">
+    public void testLoginComSucesso() throws Exception {
+        LoginServlet loginServlet = new LoginServlet();
+        (...)
+        loginServlet.doGet(requestMock, responseMock());
+        verify(requestMock);
+    }
+</pre>
+
+</div>
+
+
+<p>Se introduzirmos um erro no código, fazendo com que o mesmo utilize “bemvindo”, ao invés de “bem-vindo”, obtemos um erro como o seguinte:</p>
+
+<div>
+    
+<pre name="code" class="java">
+    java.lang.AssertionError: 
+    Unexpected method call getRequestDispatcher("bemvindo.jsp"):
+        getRequestDispatcher("bem-vindo.jsp"): expected: 1, actual: 0
+</pre>
+
+</div>
+
+
+<p>O erro indica que o mock esperava que seu método <code>getRequestDispatcher(“bem-vindo.jsp”)</code> fosse chamado uma vez, porém na realidade nunca foi chamado. O <code>verify()</code>, portanto, pode ser usado sempre que precisamos verificar se uma expectativa programada no mock foi cumprida durante a execução do teste.</p>
+
+<h2>Estabelecendo restrições</h2>
+
+<p>O <a href="http://www.easymock.org">EasyMock</a> também nos permite configurar um mock de modo a esperar que apenas alguns de seus métodos sejam chamados. Assim, se algum outro for chamado, um erro é acusado. Por exemplo, note que o mock que é criado para o <code>RequestDispatcher</code> na linha a seguir não espera que seu método <code>forward()</code> seja chamado, o que de fato acontece durante a execução do servlet.</p>
+
+<div>
+    
+<pre name="code" class="java">
+    private RequestDispatcher requestDispatcher() {
+        RequestDispatcher dispatcherMock = createNiceMock(RequestDispatcher.class);
+        replay(dispatcherMock);
+        ...
+</pre>
+
+</div>
+
+
+<p>O teste só funcionou porque criamos um <em>nice mock</em>. Existem três tipos de mock que podem ser criados com o <a href="http://www.easymock.org">EasyMock</a>. Um mock <em>comum</em> é criado com o método <code>createMock()</code> e só permite que o teste chame métodos explicitamente declarados na criação do mock. Uma chamada a qualquer outro método do mock, irá causar um erro. Por exemplo, caso tivéssemos usado <code>createMock()</code> no código anterior, obteríamos a seguinte mensagem de erro:</p>
+
+<div>
+    
+<pre name="code" class="java">
+    java.lang.AssertionError: 
+        Unexpected method call forward(
+        EasyMock for interface javax.servlet.http.HttpServletRequest, 
+        EasyMock for interface javax.servlet.http.HttpServletResponse):
+</pre>
+
+</div>
+
+
+<p>Essa mensagem indica que o método <code>forward()</code> não deveria ter sido chamado pelo teste, pois o mock não foi configurado para chamadas a esse método.</p>
+
+<p>Esse tipo de erro não é gerado quando usamos o segundo tipo de mock object suportado pelo <a href="http://www.easymock.org">EasyMock</a>. Trata-se do <em>nice mock</em>. É um um mock object “bonzinho” ou tolerante, que não acusa erros se você tentar executar métodos para os quais o objeto não foi programado a responder.</p>
+
+<p>O último tipo de mock é o mais “caxias” de todos. Ele é parecido com o mock comum, criado com <code>createMock()</code>. Esse último exige que cada método que seja acessado em um mock tenha sido explicitamente preparado para ser chamado. Isso normalmente significa que é necessário usar algum tipo de <code>expect()</code> para esses métodos enquando o mock está sendo configurado. O que diferencia este último tipo de mock, que é conhecido como <em>strict mock</em>, é que ele não apenas exige que os métodos tenham sido configurados, mas também exige que a chamada a esses métodos siga exatamente a ordem em que foram configuradas. Cria-se um mock object deste tipo com o <code>createStrictMock()</code>.</p>
+
+<h2>Conclusões</h2>
+
+<p>O uso de mock objects é essencial para se obter o nível de isolamento desejável ao se criar <a href="/xp/praticas/tdd">testes de unidade</a>. Sem eles, usar <a href="/xp/praticas/tdd">testes de unidade</a> pode se tornar não apenas doloroso, mas também inviável. O <a href="http://www.easymock.org">EasyMock</a> é uma ferramenta que possibilita a criação de mock objects dinamicamente, de maneira simples, permitindo que o desenvolvedor tenha total controle sobre o comportamento dos mocks criados.</p>
+
+<h2>Autoria</h2>
+
+<p>Texto de <a href="http://viniciusteles.com.br">Vinícius Manhães Teles</a>.<br/>
+Ilustrações de <a href="http://improveit.com.br/empresa/leandro">Leandro Mello</a>.</p>
+
+<p>Publicado em 15/10/2006.</p>
+
+<p>Licenciado como <a href="http://creativecommons.org/licenses/by/3.0/deed.pt_BR">Creative Commons Atribuição</a>.</p>
+
+      </article>
+    </section>
+    <footer>
+	<div class="center">
+	    <span>DesenvolvimentoAgil.com.br - 2013-2014</span>
+	</div>
+</footer>
+  </body>
+</html>
