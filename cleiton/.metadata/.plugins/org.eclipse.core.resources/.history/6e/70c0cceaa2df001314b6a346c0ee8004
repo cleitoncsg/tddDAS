@@ -21,8 +21,7 @@ public class RetanguloTest {
 		retangulo.setXmax(2);
 		retangulo.setYmax(2);
 		
-		assertTrue(retangulo.verificaSeEhRetangulo());
+		assertTrue(verificaSeEhRetangulo());
 	}
 
-	
 }
