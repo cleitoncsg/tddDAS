@@ -16,7 +16,7 @@ public class ConversorRomanotest {
 
 	@Test
 	public void converteParaRomanoTest() {
-		assertEquals("I",conversor.converterParaRomano(1));
+		assertEquals("I", conversor.converterParaRomano(1));
 	}
 
 }
