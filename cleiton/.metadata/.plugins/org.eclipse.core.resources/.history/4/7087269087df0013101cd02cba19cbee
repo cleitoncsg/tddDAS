@@ -32,10 +32,5 @@ public class ConversorRomanotest {
 	public void verificarConversaoDeNumeroNegativo(){
 		assertEquals("X",conversor.converterParaRomano(-10));
 	}
-	
-	@Test
-	public void converteParaInteiro(){
-		assertEquals(1,conversor.converterParaInteiro("I"));
-	}
 
 }
