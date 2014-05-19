@@ -38,6 +38,11 @@ public class ConversorRomanotest {
 		assertEquals(1,conversor.converterParaInteiro("I"));
 		assertEquals(2,conversor.converterParaInteiro("II"));
 		assertEquals(3,conversor.converterParaInteiro("III"));
+		assertEquals(10,conversor.converterParaInteiro("X"));
+		assertEquals(50,conversor.converterParaInteiro("L"));
+		assertEquals(100,conversor.converterParaInteiro("C"));
+		assertEquals(500,conversor.converterParaInteiro("D"));
+		assertEquals(2000,conversor.converterParaInteiro("MM"));
 	}
 
 }

@@ -84,13 +84,33 @@ public class ConversorRomano {
 	   }
 
 	public int converterParaInteiro(String romano) {
-		if(romano == "I")
-			return 1;
-		else if(romano == "II"){
-			return 2;
+		int numeroConvertido = 0;
+		int tamanhoString = romano.length();
+		int iteracao = 0;
+		
+		while(true){
+			
+			if(romano.charAt(iteracao) == 'M')
+				numeroConvertido += 1000;
+			if(romano.charAt(iteracao) == 'D')
+				numeroConvertido += 500;
+			if(romano.charAt(iteracao) == 'C')
+				numeroConvertido += 100;
+			if(romano.charAt(iteracao) == 'L')
+				numeroConvertido += 50;
+			if(romano.charAt(iteracao) == 'X')
+				numeroConvertido += 10;
+			if(romano.charAt(iteracao) == 'I')
+				numeroConvertido += 1;
+			
+			iteracao++;
+			
+			if(iteracao == tamanhoString)
+				break;
 		}
-		else
-			return 3;
+		
+		System.out.println(numeroConvertido);
+		return numeroConvertido;
 	}
 	
 }

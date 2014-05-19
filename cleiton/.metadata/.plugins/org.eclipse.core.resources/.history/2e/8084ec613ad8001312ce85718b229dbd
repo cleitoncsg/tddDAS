@@ -1,8 +1,0 @@
-package passo1;
-
-public class Pessoa {
-	
-	private String nome;
-	
-
-}
