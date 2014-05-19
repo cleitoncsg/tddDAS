@@ -4,69 +4,71 @@ public class ConversorRomano {
 
 
 	public String converterParaRomano(int numero) {
+			int n;
+	        int sobra = 0;
 	        String numeroRomano = "";
 
-	        while(numero >= 1000) {
+            if(numero >= 1000) {
                 numeroRomano += "M";
                 numero -= 1000;
             }
             //para 900 ->CM
-            while(numero >= 900) {
+            else if(numero >= 900) {
                 numeroRomano += "CM";
                 numero -= 900;
             }
             //para 500 -> D
-            while(numero >= 500) {
+            else if(numero >= 500) {
                 numeroRomano += "D";
                 numero -= 500;
             }
             //para 400 -> CD
-            while(numero >= 400) {
+            else if(numero >= 400) {
                 numeroRomano += "CD";
                 numero -= 400;
             }
             //para 100 -> C
-            while(numero >= 100) {
+            else if(numero >= 100) {
                 numeroRomano += "C";
                 numero -= 100;
             }
             //para 90 -> XC
-            while(numero >= 90) {
+            else if(numero >= 90) {
                 numeroRomano += "XC";
                 numero -= 90;
             }
             //para 50 -> L
-            while(numero >= 50) {
+            else if (numero >= 50) {
                 numeroRomano += "L";
                 numero -= 50;
             }
             //para 40 -> XL
-            while(numero >= 40) {
+            else if(numero >= 40) {
                 numeroRomano += "XL";
                 numero -= 40;
             }
             //para 10 -> X
-            while(numero >= 10) {
+            else if(numero >= 10) {
                 numeroRomano += "X";
                 numero -= 10;
             }
             //para 9 -> IX
-            while(numero >= 9) {
+            else if(numero >= 9) {
                 numeroRomano += "IX";
                 numero -= 9;
             }
             //para 5 -> V
-            while(numero >= 5) {
+            else if(numero >= 5) {
                 numeroRomano += "V";
                 numero -= 5;
             }
             //para 4 -> IV
-            while(numero >= 4) {
+            else if(numero >= 4) {
                 numeroRomano += "IV";
                 numero -= 4;
             }
             //para 1 -> I
-            while(numero >= 1) {
+            else if (numero >= 1) {
                 numeroRomano += "I";
                 numero -= 1;
             }

@@ -20,11 +20,6 @@ public class ConversorRomanotest {
 		assertEquals("II",conversor.converterParaRomano(2));
 		assertEquals("III",conversor.converterParaRomano(3));
 		assertEquals("C",conversor.converterParaRomano(100));
-		assertEquals("C",conversor.converterParaRomano(100));
-		assertEquals("CD",conversor.converterParaRomano(400));
-		assertEquals("D",conversor.converterParaRomano(500));
-		assertEquals("CM",conversor.converterParaRomano(900));
-		assertEquals("M",conversor.converterParaRomano(1000));
 	}
 
 }

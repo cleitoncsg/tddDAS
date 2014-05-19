@@ -4,6 +4,8 @@ public class ConversorRomano {
 
 
 	public String converterParaRomano(int numero) {
+			int n;
+	        int sobra = 0;
 	        String numeroRomano = "";
 
 	        while(numero >= 1000) {
