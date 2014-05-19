@@ -9,10 +9,6 @@ public class Retangulo {
 			return true;
 		return false;
 	}
-
-	public double calculoPerimetro(double xmin,double ymin,double xmax,double ymax) {
-		return 2;
-	}
 	
 
 }
