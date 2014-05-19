@@ -4,6 +4,16 @@ public class ConversorRomano {
 
 
 	public String converterParaRomano(int numero) {
-		return "I";
+		String retorno = null;
+		if(numero == 1){
+			retorno = "I";
+		}
+		else if(numero == 2){
+			retorno = "II";
+		}
+		else
+			retorno = "III";
+		
+		return retorno;
 	}
 }
