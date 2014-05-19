@@ -29,9 +29,6 @@ public class RetanguloTest {
 		assertEquals(4, retangulo.calculoArea(0, 0, 1, 2),0.01);
 	}
 	
-	@Test
-	public void verificaSobrePosicaoTest(){
-		assertTrue(retangulo.verificaSobrePosicao(0, 0, 1, 2));
-	}
+
 	
 }
