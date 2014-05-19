@@ -23,12 +23,6 @@ public class RetanguloTest {
 	public void calculoPerimetroTest(){
 		assertEquals(6, retangulo.calculoPerimetro(0, 0, 1, 2),0.01);
 	}
-	
-	@Test
-	public void calculoAreaTest(){
-		assertEquals(4, retangulo.calculoArea(0, 0, 1, 2),0.01);
-	}
-	
 
 	
 }

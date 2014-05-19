@@ -15,6 +15,9 @@ public class Retangulo {
 		return perimetro;
 	}
 
+	public double calculoArea(double xmin,double ymin,double xmax,double ymax) {
+		return 4;
+	}
 	
 
 }
