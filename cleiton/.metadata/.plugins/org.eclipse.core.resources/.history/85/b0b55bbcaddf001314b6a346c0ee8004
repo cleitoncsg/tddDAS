@@ -21,7 +21,7 @@ public class RetanguloTest {
 	
 	@Test
 	public void calculoPerimetroTest(){
-		assertEquals(6, retangulo.calculoPerimetro(0, 0, 1, 2),0.01);
+		assertEquals(4, retangulo.calculoPerimetro(0, 0, 1, 2),0.01);
 	}
 
 	

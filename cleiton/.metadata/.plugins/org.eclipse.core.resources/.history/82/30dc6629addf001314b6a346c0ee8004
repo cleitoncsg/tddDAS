@@ -11,8 +11,7 @@ public class Retangulo {
 	}
 
 	public double calculoPerimetro(double xmin,double ymin,double xmax,double ymax) {
-		double perimetro = ( (ymax - ymin) + (xmax - xmin) )*2;
-		return perimetro;
+		return 2;
 	}
 	
 
