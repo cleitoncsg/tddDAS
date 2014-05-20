@@ -16,18 +16,18 @@ public class Console {
 		opcao = Integer.parseInt(receba.nextLine());
 		
 		if(opcao == 1){
-			calculoRetangulo();
+			calculaAreaRetangulo();
 			return true;
 		}
 		if(opcao == 2){
-			calculoCirculo();
+			//calculaAreaCirculo();
 			return true;
 		}
 		return false;
 	}
 	
 
-	public boolean calculoRetangulo() {
+	public boolean calculaAreaRetangulo() {
 		System.out.println("Digite o lado A do retangulo");
 		int ladoA = Integer.parseInt(receba.nextLine());
 		
@@ -40,12 +40,6 @@ public class Console {
 		if(ladoA < 0 || ladoB < 0)
 			return false;
 		return true;
-	}
-	
-	public boolean calculoCirculo(){
-		
-		return true;
-	}
 	}
 
 }

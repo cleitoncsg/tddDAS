@@ -20,7 +20,7 @@ public class Console {
 			return true;
 		}
 		if(opcao == 2){
-			calculoCirculo();
+			//calculaAreaCirculo();
 			return true;
 		}
 		return false;
@@ -40,12 +40,6 @@ public class Console {
 		if(ladoA < 0 || ladoB < 0)
 			return false;
 		return true;
-	}
-	
-	public boolean calculoCirculo(){
-		
-		return true;
-	}
 	}
 
 }

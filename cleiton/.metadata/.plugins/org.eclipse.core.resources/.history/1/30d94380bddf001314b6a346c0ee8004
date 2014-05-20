@@ -20,13 +20,8 @@ public class ConsoleTest {
 	}
 	
 	@Test
-	public void calculosRetanguloTest() {
-		assertTrue(console.calculoRetangulo());
-	}
-	
-	@Test
-	public void calculosCirculoTest() {
-		assertTrue(console.calculoCirculo());
+	public void calculaAreaRetanguloTest() {
+		assertTrue(console.calculaAreaRetangulo());
 	}
 	
 	
