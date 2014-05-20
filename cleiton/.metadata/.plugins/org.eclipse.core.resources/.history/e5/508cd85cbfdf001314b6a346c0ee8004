@@ -14,16 +14,9 @@ public class ConsoleTest {
 		console = new Console();
 	}
 
-	
 	@Test
-	public void calculosRetanguloTest() {
+	public void selecionaOpcaoTest() {
 		assertTrue(console.menu());
-		assertTrue(console.calculoRetangulo());
 	}
 	
-	@Test
-	public void calculosCirculoTest() {
-		assertTrue(console.menu());
-		assertTrue(console.calculoCirculo());
-	}
 }

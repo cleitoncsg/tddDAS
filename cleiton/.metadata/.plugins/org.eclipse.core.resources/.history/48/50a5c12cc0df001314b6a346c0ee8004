@@ -26,4 +26,6 @@ public class ConsoleTest {
 		assertTrue(console.menu());
 		assertTrue(console.calculoCirculo());
 	}
+	
+	
 }

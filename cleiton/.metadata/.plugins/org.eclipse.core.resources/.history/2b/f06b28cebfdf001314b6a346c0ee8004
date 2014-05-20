@@ -17,13 +17,17 @@ public class ConsoleTest {
 	
 	@Test
 	public void calculosRetanguloTest() {
-		assertTrue(console.menu());
 		assertTrue(console.calculoRetangulo());
 	}
 	
 	@Test
 	public void calculosCirculoTest() {
-		assertTrue(console.menu());
 		assertTrue(console.calculoCirculo());
 	}
+	
+	@Test
+	public void selecionaOpcaoTest() {
+		assertTrue(console.menu());
+	}
+	
 }
