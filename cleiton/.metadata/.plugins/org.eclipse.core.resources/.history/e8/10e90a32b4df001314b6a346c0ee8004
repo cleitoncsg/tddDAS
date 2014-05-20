@@ -22,11 +22,6 @@ public class Retangulo {
 	}
 
 	public boolean verificaSobrePosicao(Ponto pontoA, Ponto pontoB) {
-		
-		if(pontoA.getXmax() - pontoB.getXmax() > 0)
-			return true;
-		if(pontoA.getYmax() - pontoA.getYmax() > 0)
-			return true;
-		return false;
+		return true;
 	}
 }

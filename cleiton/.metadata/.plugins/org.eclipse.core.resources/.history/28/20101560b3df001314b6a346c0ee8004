@@ -2,8 +2,6 @@ package retangulo;
 
 public class Retangulo {
 	
-	Ponto pontoA,pontoB;
-	
 	public boolean verificaSeEhRetangulo(double xmin,double ymin,double xmax,double ymax) {
 		
 		if( (ymax - ymin) > 0 && (xmax - xmin) > 0)
@@ -21,12 +19,7 @@ public class Retangulo {
 		return area;
 	}
 
-	public boolean verificaSobrePosicao(Ponto pontoA, Ponto pontoB) {
-		
-		if(pontoA.getXmax() - pontoB.getXmax() > 0)
-			return true;
-		if(pontoA.getYmax() - pontoA.getYmax() > 0)
-			return true;
-		return false;
+	public boolean verificaSobrePosicao(double xmin,double ymin,double xmax,double ymax) {
+		return true;
 	}
 }

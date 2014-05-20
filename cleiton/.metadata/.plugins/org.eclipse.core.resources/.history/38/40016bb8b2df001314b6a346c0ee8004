@@ -8,13 +8,10 @@ import org.junit.Test;
 public class RetanguloTest {
 
 	Retangulo retangulo;
-	Ponto pontoA,pontoB;
 	
 	@Before
 	public void setUp() throws Exception {
 		retangulo = new Retangulo();
-		pontoA = new Ponto();
-		pontoB = new Ponto();
 	}
 
 	@Test
@@ -34,17 +31,7 @@ public class RetanguloTest {
 	
 	@Test
 	public void verificaSobrePosicaoTest(){
-		pontoA.setXmax(2);
-		pontoA.setXmin(0);
-		pontoA.setYmax(1);
-		pontoA.setYmin(0);
-		pontoB.setXmax(1);
-		pontoB.setXmin(0);
-		pontoB.setYmax(1);
-		pontoB.setYmin(0);
-		
-		assertTrue(retangulo.verificaSobrePosicao(pontoA,pontoB));
-		
+		assertTrue(retangulo.verificaSobrePosicao(0, 0, 1, 2));
 	}
 	
 }
