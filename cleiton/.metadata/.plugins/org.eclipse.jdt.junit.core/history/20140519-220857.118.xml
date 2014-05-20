@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="ConsoleTest" project="exercicioConsoleInteraction" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="tddConsole.ConsoleTest" time="3.67">
+    <testcase name="selecionaOpcaoTest" classname="tddConsole.ConsoleTest" time="3.667"/>
+    <testcase name="calculaAreaRetanguloTest" classname="tddConsole.ConsoleTest" time="0.003"/>
+  </testsuite>
+</testrun>

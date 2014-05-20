@@ -15,6 +15,8 @@ public class Console {
 		System.out.println("Digite opcao 1 ou 2");
 		opcao = Integer.parseInt(receba.nextLine());
 		
+		setOpcao(opcao);
+		
 		if(opcao == 1){
 			calculaAreaRetangulo();
 			return true;
@@ -26,20 +28,20 @@ public class Console {
 		return false;
 	}
 	
+	
+	
+	public int getOpcao() {
+		return opcao;
+	}
+
+	public void setOpcao(int opcao) {
+		this.opcao = opcao;
+	}
+
+
 
 	public boolean calculaAreaRetangulo() {
-		System.out.println("Digite o lado A do retangulo");
-		int ladoA = Integer.parseInt(receba.nextLine());
 		
-		System.out.println("Digite o lado B do retangulo");
-		int ladoB = Integer.parseInt(receba.nextLine());
-		
-		System.out.printf("Perimetro = %d\n",(ladoA+ladoB)*2 );
-		System.out.printf("Area = %d\n",(ladoA*ladoB) );
-		
-		if(ladoA < 0 || ladoB < 0)
-			return false;
-		return true;
 	}
 
 }
