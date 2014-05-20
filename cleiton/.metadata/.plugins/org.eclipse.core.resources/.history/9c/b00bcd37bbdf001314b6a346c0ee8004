@@ -18,12 +18,5 @@ public class ConsoleTest {
 	public void selecionaOpcaoTest() {
 		assertTrue(console.menu());
 	}
-	
-	@Test
-	public void calculaAreaRetanguloTest() {
-		assertTrue(console.calculaAreaRetangulo());
-	}
-	
-	
 
 }
