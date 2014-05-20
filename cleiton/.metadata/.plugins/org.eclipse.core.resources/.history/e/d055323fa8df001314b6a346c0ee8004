@@ -1,0 +1,12 @@
+package retangulo;
+
+public class Retangulo {
+
+
+	public boolean verificaSeEhRetangulo(double xmin,double xmax,double ymin,double ymax) {
+		
+		return true;
+	}
+	
+
+}

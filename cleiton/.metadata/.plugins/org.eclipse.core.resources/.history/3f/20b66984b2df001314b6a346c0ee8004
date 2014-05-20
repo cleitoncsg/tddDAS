@@ -1,0 +1,6 @@
+package retangulo;
+
+public class Ponto {
+	private double xmin,ymin,xmax,ymax;
+
+}

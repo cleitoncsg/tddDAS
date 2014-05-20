@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testrun name="ConversorRomanotest" project="exercicioRomanos" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="romanos.ConversorRomanotest" time="0.001">
-    <testcase name="verificarConversaoDeNumeroNegativo" classname="romanos.ConversorRomanotest" time="0.0"/>
-    <testcase name="converteParaInteiro" classname="romanos.ConversorRomanotest" time="0.0"/>
-    <testcase name="converteParaRomanoTest" classname="romanos.ConversorRomanotest" time="0.001"/>
-  </testsuite>
-</testrun>
