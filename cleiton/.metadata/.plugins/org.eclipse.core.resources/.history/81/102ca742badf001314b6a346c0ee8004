@@ -1,0 +1,21 @@
+package tddConsole;
+
+import java.util.Scanner;
+
+import javax.swing.text.html.HTMLEditorKit.Parser;
+
+public class Console {
+
+	Scanner receba = new Scanner(System.in);
+	private int opcao;
+	
+	public boolean menu() {
+		System.out.println("Digite opcao 1 ou 2");
+		int opcao = Integer.parseInt(receba.nextLine());
+		
+		if(opcao == 1 || opcao == 2)
+			return true;
+		return false;
+	}
+
+}

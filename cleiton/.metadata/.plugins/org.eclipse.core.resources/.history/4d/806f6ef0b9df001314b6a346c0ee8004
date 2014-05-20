@@ -1,0 +1,16 @@
+package tddConsole;
+
+import java.util.Scanner;
+
+public class Console {
+
+	Scanner receba = new Scanner(System.in);
+	
+	public boolean menu() {
+		System.out.println("Digite opcao 1 ou 2");
+		String opcao = receba.nextLine();
+		
+		return true;
+	}
+
+}
