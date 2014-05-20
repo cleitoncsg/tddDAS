@@ -32,11 +32,4 @@ public class Console {
 		this.opcao = opcao;
 	}
 
-
-
-	public boolean calculaAreaRetangulo() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
 }
