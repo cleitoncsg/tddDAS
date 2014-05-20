@@ -13,9 +13,7 @@ public class Console {
 
 	public boolean menu() {
 		System.out.println("Digite opcao 1 ou 2");
-		opcao = Integer.parseInt(receba.nextLine());
-		
-		setOpcao(opcao);
+		int opcao = Integer.parseInt(receba.nextLine());
 		
 		if(opcao == 1 || opcao == 2)
 			return true;
